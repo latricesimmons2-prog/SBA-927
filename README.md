@@ -73,7 +73,7 @@ File Descriptions:
 
 Each file focuses on a specific NLP technique and demonstrates how that technique can be applied to analyze business and customer-related text.
 
-## Part 5 - Text Preprocessing Examples
+## 5. Text Preprocessing Examples
 
 Text preprocessing prepares raw text for NLP analysis.
 For example, raw customer feedback may contain punctuation, capitalization, and unnecessary words.
@@ -89,7 +89,7 @@ Example Output:
 Tokenization separates the text into individual words or tokens. Stopword removal removes common words that may not provide much useful information for certain NLP tasks.
 Preprocessing makes the text easier for the computer to analyze.
 
-## Part 6 – Stemming vs. Lemmatization
+## 6. Stemming vs. Lemmatization
 
 Stemming and lemmatization are both techniques used to reduce words to a simpler form.
 
@@ -121,7 +121,7 @@ Lemmatization generally produces a more linguistically meaningful result than st
 Stemming is generally faster but can produce incomplete words.
 Lemmatization is more linguistically accurate because it attempts to identify the actual base or dictionary form of a word.
 
-## Part 7 – Named Entity Recognition Results
+## 7. Named Entity Recognition Results
 
 Named Entity Recognition (NER) identifies important entities within text.
 
@@ -144,7 +144,7 @@ could identify:
 
 NER is useful because businesses can use it to automatically identify important names, companies, locations, and other entities from large amounts of text.
 
-## Part 8 – Part-of-Speech (POS) Tagging Results
+## 8. Part-of-Speech (POS) Tagging Results
 
 Part-of-Speech tagging identifies the grammatical role of words in a sentence.
 
@@ -163,7 +163,7 @@ The words can be classified as:
 POS tagging helps a computer understand how words are being used within a sentence.
 This can be useful when analyzing customer feedback because businesses can identify actions, descriptions, products, and other important information within written comments.
 
-## Part 9 – Sentiment Analysis Results
+## 9. Sentiment Analysis Results
 
 Sentiment analysis determines whether text expresses a positive, negative, or neutral opinion.
 The project uses NLTK's sentiment analysis tools to evaluate customer feedback.
@@ -187,7 +187,7 @@ Result: Neutral
 
 Sentiment analysis allows businesses to process large amounts of customer feedback and quickly identify how customers feel about their products or services.
 
-## Part 10 – Business Applications
+## 10. Business Applications
 
 The NLP techniques used in this project can be applied to several business situations.
 
@@ -220,7 +220,7 @@ NER can identify people, companies, locations, products, and other important ent
 Sentiment analysis can help businesses determine whether customers have positive, negative, or neutral opinions about their products or services.
 Together, these techniques can help businesses analyze customer feedback, identify trends, monitor customer satisfaction, improve products, and make data-driven decisions.
 
-## Part 11 – Final Analysis and Conclusion
+## 11. Final Analysis and Conclusion
 SBA-927 demonstrated how Natural Language Processing can transform unstructured business text into useful information. Using Python and NLTK, the project covered multiple NLP techniques including preprocessing, tokenization, stemming, lemmatization, POS tagging, Named Entity Recognition, and sentiment analysis.
 The project showed that each technique provides a different type of information about text. When these techniques are combined, businesses can better understand customer feedback, identify important patterns, and evaluate customer sentiment.
 Overall, this project provided practical experience using NLP to solve real-world business text analysis problems and demonstrated how automated text analysis can support business decision-making.
