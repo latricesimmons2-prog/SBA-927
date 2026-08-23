@@ -67,38 +67,63 @@ for item in prompts:
     else:
         print("The sentiment analysis correctly identified the neutral sentiment in the review.")
 
-print("-" * 70)
 print()
 print("\n" + "=" * 70)
-print("PRE-TRAINED LANGUAGE MODEL EVAULATION")
+print("PRE-TRAINED LANGUAGE MODEL EVALUATION")
 print("=" * 70)
 
-print("\n1. Tokenization")
-print("Result:")
-print("The pre-trained language model successfully tokenized the input text into individual words or tokens, allowing for further analysis and processing.")
-print("Evaluation:")
-print("Tokenization performed accurately and prepared the text for further NLP tasks.")
+from transformers import pipeline
 
-print("\n2. Named Enity Recognition (NER)")
-print("Result:")
-print("The pre-trained NER language model accurately identified named entities such as names of people, organizations, locations, dates, and other specific entities.")
-print("Evaluation:")
-print("NER performed well, correctly identifying and classifying named entities in the text.")
+# Load the pre-trained DistilBERT sentiment-analysis model
+model_name = "distilbert/distilbert-base-uncased-finetuned-sst-2-english"
 
-print("\n3. Part-of-Speech (POS) Tagging")
-print("Result:")
-print("The pre-trained POS tagging language model accurately assigned part-of-speech tags to each word in the text, indicating their grammatical roles.")
-print("Evaluation:")
-print("POS tagging performed effectively, providing valuable information about the syntactic structure of the text.")
+classifier = pipeline(
+    "sentiment-analysis",
+    model=model_name
+)
 
-print("\n4. Sentiment Analysis")
-print("Result:")
-print("The pre-trained sentiment analysis language model accurately determined the sentiment of the text, classifying it as positive, negative, or neutral.")
-print("Evaluation:")
-print("Sentiment analysis performed well, providing insights into the overall sentiment expressed in the text.")
+# Test customer feedback examples
+test_reviews = [
+    "I love this product. The quality is excellent and shipping was fast.",
+    "The product arrived damaged and customer service was terrible.",
+    "The product arrived yesterday and it is the same color shown online."
+]
 
-print("\n5. Overall Performance")
-print("Result:")
-print("The pre-trained language model demonstrated strong performance across various NLP tasks, including tokenization, named entity recognition, part-of-speech tagging, and sentiment analysis.") 
-print("Evaluation:")
-print("The model's performance was consistent and reliable, showcasing its ability to handle different aspects of natural language processing effectively.")
+print("\nModel Used:")
+print(model_name)
+
+print("\nSentiment Analysis Results:")
+
+for review in test_reviews:
+    result = classifier(review)[0]
+
+    print("\nInput:")
+    print(review)
+
+    print("Predicted Sentiment:")
+    print(result["label"])
+
+    print("Confidence Score:")
+    print(f"{result['score']:.4f}")
+
+print("\n" + "-" * 70)
+print("PRE-TRAINED MODEL EVALUATION")
+print("-" * 70)
+
+print("""
+The pre-trained DistilBERT model successfully analyzed three
+customer-feedback examples. The model correctly identified the
+strongly positive review as POSITIVE and the strongly negative
+review as NEGATIVE.
+
+The third review was a factual statement without clearly positive
+or negative language. However, the model classified it as NEGATIVE
+with high confidence. This demonstrates an important limitation:
+the model was trained for binary sentiment classification and does
+not provide a neutral category.
+
+Overall, the experiment demonstrates that a pre-trained language
+model can perform sentiment classification on customer feedback,
+but its predictions should be interpreted carefully, particularly
+when the text is neutral, factual, or ambiguous.
+""")

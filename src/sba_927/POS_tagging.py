@@ -83,7 +83,7 @@ def tokenize_and_preprocess(text):
     return filtered_tokens
 
 # read the external file
-file_path = 'SBA927.txt'
+file_path = "src/sba_927/source_data/SBA927.txt"
 with open(file_path, 'r', encoding='utf-8') as file:
     # Read the entire content of the file 
     dataset = file.read().splitlines()
